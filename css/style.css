@@ -810,8 +810,28 @@ h1, h2, h3, ul, p{
     color: var(--accent-color-blue);
 }
 
-.checkbox{
-    margin-right: 8px;
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  .box-checkbox {
+    padding-left: 20px;
+  }
+
+  .box-checkbox::before {
+    content: '';
+    display: inline-block;
     width: 16px;
     height: 15px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-left: -20px;
+    margin-right: 8px;
+    background-image: url(../photo/sprite/checbox/off-check.svg);
+  }
+
+  input[type="checkbox"]:checked + .box-checkbox::before {
+    content: '';
+    background-size: 100%;
+    background-image: url(../photo/sprite/checbox/check.svg)
 }
